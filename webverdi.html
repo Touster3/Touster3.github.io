@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Verdi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC/DC</title>
+  <style>
+         body {
+  background-image: url("vyhladavanie.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+      .topbar {
+      background-color: #6b1c63;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      border-bottom: 2px solid #0c0606;
+      height: 60px; 
+      padding: 10px 20px;
+    }
+    .topbar > *:not(:last-child) {
+      border-right: 2px solid #0c0606;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6b1c63;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f984de;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+
+    #mainContent {
+      padding: 20px;
+    }
+    #mainContent img {
+  float: left;
+  margin-right: 20px; 
+  max-width: 300px;
+  height: auto; 
+  border-radius: 10px; 
+}
+
+#mainContent {
+  overflow: hidden; 
+}
+
+#mainContent h2 {
+  font-size: 2em; 
+  margin-bottom: 10px; 
+}
+
+#mainContent p {
+  font-size: 1.5em; 
+  line-height: 1.8; 
+  text-align: justify; 
+}
+
+#mainContent a {
+  display: inline-block; 
+  margin-top: 20px; 
+  text-decoration: none; 
+  font-size: 1.2em; 
+  color: #000; 
+  font-weight: bold; 
+}
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="menu">
+      <div class="dropdown">
+        <span><strong>Žánre</strong></span>
+        <div class="dropdown-content">
+          <a href="web.html" onclick="showGenre('Jazz')">Jazz</a>
+          <a href="web.html" onclick="showGenre('Rock')">Rock</a>
+          <a href="web.html" onclick="showGenre('Metal')">Metal</a>
+          <a href="web.html" onclick="showGenre('Techno')">Techno</a>
+          <a href="web.html" onclick="showGenre('Pop')">Pop</a>
+          <a href="web.html" onclick="showGenre('Rap')">Rap</a>
+          <a href="web.html" onclick="showGenre('Klasika')">Klasika</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="web.html" onclick="toggleForm()">Pridať interpreta</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Vyhľadať interpreta">
+      <button onclick="searchArtist()">Vyhľadať</button>
+    </div>
+  </header>
+  <div id="headerContainer"></div>
+  <div id="mainContent">
+    <h2>Verdi</h2>
+    <img src="verdi.jpg" alt="Verdi" style="max-width:400px;">
+    <p>Giuseppe Verdi bol taliansky skladateľ, ktorý sa stal jedným z najvýznamnejších a najvplyvnejších autorov opery v histórii hudby. Narodil sa 10. októbra 1813 v Le Roncole (vtedy súčasť Cisalpinskej republiky, dnes Taliansko) a jeho kariéra sa rozprestiera po veľkej časti 19. storočia. Verdiho hudba, známa svojou emocionálnosťou, silnými melodickými linkami a dramatickým vyjadrením, mala obrovský vplyv na vývoj opery a hudby vôbec. Verdi začal svoju kariéru v mladom veku, ale naozaj sa preslávil až po vydaní opery „Nabucco“ (1842), ktorá sa stala okamžitým hitom a urobila z neho národného hrdinu v Taliansku počas obdobia Risorgimenta (procesu zjednotenia Talianska). Opera Nabucco obsahuje slávnu „Chór otrokov“, ktorá sa stala symbolom talianskeho národného obrodenia. Medzi jeho najznámejšie opery patrí „La Traviata“, „Aida“, „Rigoletto“, „Il Trovatore“ a „Don Carlo“. Tieto diela sa vyznačujú vynikajúcou dramatickou konštrukciou, bohatými orchestrálnymi partitúrami a silnými, nezabudnuteľnými melódiami. Verdiho opery často zachytávajú veľké ľudské emócie – lásku, zrad, pomstu, túžbu po moci – a jeho postavy sú často plné vnútornej rozporuplnosti, čo dodáva jeho dielam hlbokú psychologickú hĺbku. Počas svojej kariéry Verdi neustále experimentoval s formami a orchestráciou, čím posúval hranice tradičnej opery. V neskorších rokoch života skomponoval aj svoj jediný requiem, „Messa da Requiem“, ktoré sa považuje za jedno z jeho najväčších majstrovských diel. Verdi zomrel 27. januára 1901 v Miláne. Jeho hudba pretrváva dodnes a je neodmysliteľnou súčasťou operného repertoáru. Verdiho diela sa stále často uvádzajú na celom svete a sú považované za pilier klasickej hudby.</p>
+    <a href="web.html">Späť na hlavnú stránku</a> 
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
