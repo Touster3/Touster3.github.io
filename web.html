@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hudobné žánre</title>
+  <style>
+    body {
+  background-image: url("vyhladavanie.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+  .topbar {
+      background-color: #6b1c63;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      border-bottom: 2px solid #0c0606;
+      height: 60px; 
+      padding: 10px 20px;height: 60px; 
+    }
+    .topbar > *:not(:last-child) {
+      border-right: 2px solid #0c0606;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6b1c63;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f984de;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+    
+    #mainContent {
+      padding: none;
+    }
+
+    .artists-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+
+    .artist {
+      background-color: #7952c7;
+      border: 5px solid #090303;
+      border-radius: 5px;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1 / 1;
+      font-size: 18px;
+    }
+
+    .artist img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .artist h3 {
+      margin: 10px 0;
+    }
+
+    #addArtistForm {
+      display: none;
+      margin: 20px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      width: fit-content;
+    }
+    .not-found-image {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin-top: 20px; 
+
+}
+main#mainContent img {
+  border: none !important;
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="menu">
+      <div class="dropdown">
+        <span><strong>Žánre</strong></span>
+        <div class="dropdown-content">
+          <a href="#" onclick="showGenre('Jazz')">Jazz</a>
+          <a href="#" onclick="showGenre('Rock')">Rock</a>
+          <a href="#" onclick="showGenre('Metal')">Metal</a>
+          <a href="#" onclick="showGenre('Techno')">Techno</a>
+          <a href="#" onclick="showGenre('Pop')">Pop</a>
+          <a href="#" onclick="showGenre('Rap')">Rap</a>
+          <a href="#" onclick="showGenre('Klasika')">Klasika</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="#" onclick="toggleForm()">Pridať interpreta</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Vyhľadať interpreta">
+      <button onclick="searchArtist()">Vyhľadať</button>
+    </div>
+  </header>
+  <main id="mainContent">
+    <img src="hlavne.jpg"  style="width: 100%; height: auto;">
+  </main>
+  <section id="artistDetail"></section>
+  <form id="addArtistForm" onsubmit="addArtist(event)">
+    <h3>Pridať interpreta</h3>
+    <input type="text" id="newName" placeholder="Meno interpreta" required><br><br>
+    <textarea id="newDescription" placeholder="Popis interpreta" required></textarea><br><br>
+    <input type="text" id="newImage" placeholder="Názov obrázku (napr. artist.jpg)" required><br><br>
+    <select id="newGenre" required>
+      <option value="">Vyber žáner</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Rock">Rock</option>
+      <option value="Metal">Metal</option>
+      <option value="Techno">Techno</option>
+      <option value="Pop">Pop</option>
+      <option value="Rap">Rap</option>
+      <option value="Klasika">Klasika</option>
+    </select><br><br>
+    <button type="submit">Pridať</button>
+  </form>
+  <script src="main.js"></script>
+</body>
+</html>

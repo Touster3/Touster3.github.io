@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Drake</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC/DC</title>
+  <style>    body {
+    background-image: url("vyhladavanie.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+    .topbar {
+      background-color: #6b1c63;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      border-bottom: 2px solid #0c0606;
+      height: 60px; 
+      padding: 10px 20px;height: 60px; 
+    }
+    .topbar > *:not(:last-child) {
+      border-right: 2px solid #0c0606;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6b1c63;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f984de;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+
+    #mainContent {
+      padding: 20px;
+    }
+    #mainContent img {
+  float: left;
+  margin-right: 20px; 
+  max-width: 300px;
+  height: auto; 
+  border-radius: 10px; 
+}
+
+#mainContent {
+  overflow: hidden; 
+}
+
+#mainContent h2 {
+  font-size: 2em; 
+  margin-bottom: 10px; 
+}
+
+#mainContent p {
+  font-size: 1.5em; 
+  line-height: 1.8; 
+  text-align: justify; 
+}
+
+#mainContent a {
+  display: inline-block; 
+  margin-top: 20px; 
+  text-decoration: none; 
+  font-size: 1.2em; 
+  color: #000; 
+  font-weight: bold; 
+}
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="menu">
+      <div class="dropdown">
+        <span><strong>Žánre</strong></span>
+        <div class="dropdown-content">
+          <a href="web.html" onclick="showGenre('Jazz')">Jazz</a>
+          <a href="web.html" onclick="showGenre('Rock')">Rock</a>
+          <a href="web.html" onclick="showGenre('Metal')">Metal</a>
+          <a href="web.html" onclick="showGenre('Techno')">Techno</a>
+          <a href="web.html" onclick="showGenre('Pop')">Pop</a>
+          <a href="web.html" onclick="showGenre('Rap')">Rap</a>
+          <a href="web.html" onclick="showGenre('Klasika')">Klasika</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="web.html" onclick="toggleForm()">Pridať interpreta</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Vyhľadať interpreta">
+      <button onclick="searchArtist()">Vyhľadať</button>
+    </div>
+  </header>
+    <div id="headerContainer"></div>
+    <web.html id="mainContent">
+    <h2>Drake</h2>
+    <img src="drake.jpg" alt="Drake" style="max-width:400px;">
+    <p>Drake, kanadský rapper a producent, pokračuje v roku 2025 v aktívnej hudobnej kariére a podnikateľských aktivitách. V januári 2025 vydal spolu s PartyNextDoor spoločný album Some Sexy Songs 4 U, ktorý debutoval na prvom mieste Billboard 200. Album obsahuje skladby ako Nokia, ktorá sa stala jeho prvým sólovým hitom na vrchole Billboard Hot 100. Hudobné video k tejto skladbe bolo natočené v IMAX a obsahuje cameá Shai Gilgeous-Alexandra. V rámci podpory albumu absolvoval turné Anita Max Win Tour, ktoré začalo 4. februára 2025 v Perte a pokračovalo po Austrálii a Novom Zélande. Kvôli vysokému dopytu boli pridané ďalšie koncerty v Sydney a Brisbane. Turné bolo však v závere februára nečakane prerušené kvôli plánovacím konfliktom, pričom zvyšné dátumy sa plánujú presunúť a pridať ďalšie koncerty.</p>
+    <a href="web.html">Späť na hlavnú stránku</a> 
+    </siv>
+    <script src="main.js"></script>
+</body>
+</html>
+  

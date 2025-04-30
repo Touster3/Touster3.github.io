@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Haydn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC/DC</title>
+  <style>
+        body {
+  background-image: url("vyhladavanie.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+      .topbar {
+      background-color: #6b1c63;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      border-bottom: 2px solid #0c0606;
+      height: 60px; 
+      padding: 10px 20px;height: 60px; 
+    }
+    .topbar > *:not(:last-child) {
+      border-right: 2px solid #0c0606;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6b1c63;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f984de;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+    #mainContent {
+      padding: 20px;
+    }
+    .search-bar {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+
+    #mainContent {
+      padding: 20px;
+    }
+    #mainContent img {
+  float: left;
+  margin-right: 20px; 
+  max-width: 300px;
+  height: auto; 
+  border-radius: 10px; 
+}
+
+#mainContent {
+  overflow: hidden; 
+}
+
+#mainContent h2 {
+  font-size: 2em; 
+  margin-bottom: 10px; 
+}
+
+#mainContent p {
+  font-size: 1.5em; 
+  line-height: 1.8; 
+  text-align: justify; 
+}
+
+#mainContent a {
+  display: inline-block; 
+  margin-top: 20px; 
+  text-decoration: none; 
+  font-size: 1.2em; 
+  color: #000; 
+  font-weight: bold; 
+}
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="menu">
+      <div class="dropdown">
+        <span><strong>Žánre</strong></span>
+        <div class="dropdown-content">
+          <a href="web.html" onclick="showGenre('Jazz')">Jazz</a>
+          <a href="web.html" onclick="showGenre('Rock')">Rock</a>
+          <a href="web.html" onclick="showGenre('Metal')">Metal</a>
+          <a href="web.html" onclick="showGenre('Techno')">Techno</a>
+          <a href="web.html" onclick="showGenre('Pop')">Pop</a>
+          <a href="web.html" onclick="showGenre('Rap')">Rap</a>
+          <a href="web.html" onclick="showGenre('Klasika')">Klasika</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="web.html" onclick="toggleForm()">Pridať interpreta</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Vyhľadať interpreta">
+      <button onclick="searchArtist()">Vyhľadať</button>
+    </div>
+  </header>
+    <div id="headerContainer"></div>
+    <div id="mainContent">
+    <h2>Haydn</h2>
+    <img src="Haydn.jpg" alt="Haydn" style="max-width:400px;">
+    <p>Joseph Haydn bol rakúsky skladateľ, považovaný za jedného z najvýznamnejších predstaviteľov klasicizmu v hudbe. Narodil sa 31. marca 1732 v Rohrau v Rakúsku a počas svojej kariéry sa stal jedným z najplodnejších a najvplyvnejších skladateľov svojej doby. Haydn je známy predovšetkým svojimi symfóniami a klavírnymi kvartetmi, ktoré mali obrovský vplyv na vývoj klasickej hudby. Jeho diela sú charakteristické jasnou formou, vyváženými melódiami a jemnými kontrastmi medzi rôznymi hudobnými témami. Medzi jeho najznámejšie symfónie patrí Symfónia č. 94 „Prekvapenie“, Symfónia č. 101 „Hodiny“ a Symfónia č. 104 „Londýnska“. Okrem symfónií skomponoval aj vyše 60 sláčikových kvartetov, ktoré sa považujú za kľúčové pre rozvoj tohto hudobného žánru. Haydn mal zásadný vplyv na vývoj formy sonáty a klasickej symfónie, pričom jeho diela sú považované za modely pre ďalších skladateľov, ako boli Mozart a Beethoven. Haydn bol tiež známy svojím zmyslom pre humor a experimentovanie s hudobnou štruktúrou, čo sa odráža v mnohých jeho skladbách. Po väčšinu svojej kariéry pôsobil ako dvorný skladateľ v službách kniežaťa Esterházyho, kde mal veľkú slobodu pri komponovaní. Jeho hudba bola veľmi obľúbená a jeho pozícia mu umožnila vytvoriť bohatý a rôznorodý repertoár. Haydn zomrel 31. mája 1809 vo Viedni.</p>
+    <a href="web.html">Späť na hlavnú stránku</a>  
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
