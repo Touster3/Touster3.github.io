@@ -120,18 +120,21 @@ const artists = {
     { name: "Verdi", page: "webverdi.html" }
   ]
 };
+
 function showGenre(genre) {
   const content = document.getElementById("mainContent");
   const artistDetail = document.getElementById("artistDetail");
   artistDetail.innerHTML = "";
   const genreArtists = artists[genre];
 
+  content.innerHTML = "";
+
   if (!genreArtists || genreArtists.length === 0) {
     content.innerHTML = `<h2>Žáner "${genre}" nebol nájdený.</h2>`;
     return;
   }
 
-  content.innerHTML = `<h2>${genre}</h2><div class="artists-container"></div>`;
+  content.innerHTML = `<div class="artists-container"></div>`;
   const container = document.querySelector(".artists-container");
 
   genreArtists.forEach((artist, index) => {
@@ -143,6 +146,8 @@ function showGenre(genre) {
     container.appendChild(artistCard);
   });
 }
+
+
 
 
 function goToArtistPage(page) {
