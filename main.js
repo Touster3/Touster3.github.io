@@ -138,8 +138,7 @@ function showGenre(genre) {
     const artistCard = document.createElement("div");
     artistCard.className = "artist";
     artistCard.innerHTML = `
-      <h3>${artist.name}</h3>
-      <button onclick="goToArtistPage('${artist.page}')">Zobraziť detail</button>
+      <h3><a href="${artist.page}" style="text-decoration: none; color: inherit;">${artist.name}</a></h3>
     `;
     container.appendChild(artistCard);
   });
